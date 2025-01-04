@@ -1,0 +1,45 @@
+// This is test_class_2.cpp
+// Changes from test_class_1.cpp
+// 1. adding testing cases of default constructor without arg info
+// 2. adding testing cases of setter functions
+
+#define CATCH_CONFIG_MAIN
+#include "catch.hpp"
+#include "Employee_2.hpp"
+
+TEST_CASE("Class init", "[class]") {
+    Date d = {2024, 10, 21};
+    Employee e1("Ryan", 25, d); // declare an object called e1
+    // e1 is constructed using () and args
+
+    REQUIRE(e1.get_name() == "Ryan"); // e1.name is not possible since it's outside class now
+    REQUIRE(e1.get_hourly_rate() == 25); //getter functions solve such problems
+    REQUIRE(e1.get_starting_date().year == 2024); // struct cannot be directly compared via ==
+    REQUIRE(e1.get_starting_date().month == 10);
+    REQUIRE(e1.get_starting_date().day == 21);
+
+}
+
+TEST_CASE("Class init without info", "[class]") {
+    Employee e2; // declare an object called e2 without passing any information
+
+    // test the default attribute of the object e2
+    REQUIRE(e2.get_name() == "");
+    REQUIRE(e2.get_hourly_rate() == 0);
+    REQUIRE(e2.get_starting_date().year == 1900);
+    REQUIRE(e2.get_starting_date().month == 1);
+    REQUIRE(e2.get_starting_date().day == 1);
+
+    // use setter functions to modify object attributes
+    REQUIRE(e2.set_name("Panther"));
+    REQUIRE(e2.set_hourly_rate(1));
+    Date d = {2024, 8, 31};
+    REQUIRE(e2.set_starting_date(d));
+
+   // test the success of setter functions
+    REQUIRE(e2.get_name() == "Panther");
+    REQUIRE(e2.get_hourly_rate() == 1);
+    REQUIRE(e2.get_starting_date().year == 2024);
+    REQUIRE(e2.get_starting_date().month == 8);
+    REQUIRE(e2.get_starting_date().day == 31);
+}
