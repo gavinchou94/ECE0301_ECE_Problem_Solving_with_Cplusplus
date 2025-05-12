@@ -2,7 +2,7 @@
 # changes from starter code:
 # add a new executable and new test target
 
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 project(vec_and_class)
 
 set(CMAKE_CXX_STANDARD 11)
