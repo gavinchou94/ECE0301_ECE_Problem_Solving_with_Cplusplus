@@ -22,7 +22,11 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
-    "${workspaceFolder}/1_circle_area/circle_area_end",
+    "${workspaceFolder}/Problems/problem01",
+    "${workspaceFolder}/Lectures/1_circle_area/circle_area_end",
+    "${workspaceFolder}/Lectures/1_circle_area/circle_area_steps",
+    "${workspaceFolder}/Lectures/1_circle_area/circle_area_start",
+    "${workspaceFolder}/Lectures/0_hello_world",
   ],
   "files.associations": {
     "__bit_reference": "cpp",

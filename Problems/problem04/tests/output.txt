@@ -1,0 +1,3 @@
+If R = 1000.000 Ohms and V = 5.000 Volts, then I = 0.005 Amps.
+If I = 0.005 Amps and R = 1000.000 Ohms, then V = 5.000 Volts.
+If I = 0.005 Amps and V = 5.000 Volts, then R = 1000.000 Ohms.
