@@ -24,8 +24,8 @@
   "cmake.sourceDirectory": [
     "${workspaceFolder}/Problems/problem01",
     "${workspaceFolder}/Lectures/1_circle_area/circle_area_end",
-    "${workspaceFolder}/Lectures/1_circle_area/circle_area_steps",
-    "${workspaceFolder}/Lectures/1_circle_area/circle_area_start",
+    "${workspaceFolder}/Lectures/1A_circle_area/circle_area_steps",
+    "${workspaceFolder}/Lectures/1A_circle_area/circle_area_start",
     "${workspaceFolder}/Lectures/0_hello_world",
   ],
   "files.associations": {

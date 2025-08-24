@@ -1,8 +1,0 @@
-cmake_minimum_required(VERSION 3.10)
-
-# require a C++11 compiler for all targets
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-project(circle_area)
-add_executable(circle_area circle_area.cpp)

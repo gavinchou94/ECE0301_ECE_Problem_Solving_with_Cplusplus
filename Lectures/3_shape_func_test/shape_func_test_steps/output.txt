@@ -1,4 +1,0 @@
-Area is : 50.27
-Area is : 8.49
-Area is : 210.00
-Area is : 2.00

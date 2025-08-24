@@ -1,0 +1,13 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.cpptools", 
+                    "ms-vscode.cmake-tools",
+                    "ms-vscode.cpptools-extension-pack" // Collection of C and C++ extensions, including CMake
+      ]
+    }
+  }
+}

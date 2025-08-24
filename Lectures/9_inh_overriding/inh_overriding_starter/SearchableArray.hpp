@@ -1,4 +1,0 @@
-#ifndef _SEARCHABLE_ARRAY_HPP
-#define _SEARCHABLE_ARRAY_HPP
-
-#endif
