@@ -22,6 +22,8 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/2_shape_func/shape_func_starter",
+    "${workspaceFolder}/Problems/problem02",
     "${workspaceFolder}/Lectures/1B_cli_file_io/cli_file_io_end",
     "${workspaceFolder}/Lectures/1B_cli_file_io/cli_file_io_steps",
     "${workspaceFolder}/Lectures/1B_cli_file_io/cli_file_io_starter",
