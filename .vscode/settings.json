@@ -22,6 +22,7 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/4_arrays/arrays_starter",
     "${workspaceFolder}/Lectures/3_header_test/header_test_end",
     "${workspaceFolder}/Lectures/3_header_test/header_test_starter",
     "${workspaceFolder}/Problems/problem03",
