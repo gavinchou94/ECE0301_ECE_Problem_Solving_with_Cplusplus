@@ -1,4 +1,7 @@
-// This is final version of shapes.hpp
+// This is shapes_2.hpp
+// Changes from shapes_1.hpp
+// 1. add two overloaded area functions
+// 2. show examples of ternary operator and static_cast
 
 #ifndef _SHAPES_HPP
 #define _SHAPES_HPP
@@ -7,20 +10,12 @@
 #include <iostream>
 #include <string>
 
-// GLOBAL variable example
-int GLOBAL = 42;
-
 double conversion(std::string);
 double area(double);
 double area(double, double);
-double area_with_default_side(double, double = 10.0);
-// DON'T use same function names to confuse default argument with overloaded functions
 double area(double, double, double);
 double area(double, double, float); // create for sides a, b, c to show ternary
 double area(int, int, int);         // create to show static_cast
-int sum(int, int);                  // create to test function passing by value
-int sum2(int &, int);               // create to test function passing by reference
-bool calc(int, int, int);           // create to test function stub and GLOBAL variable
 
 // we expect to have a function converting string to double
 // "a = 3.14"  -->  3.14
@@ -59,16 +54,6 @@ double area(double w, double l)
     return w * l;
 }
 
-double area_with_default_side(double w, double l)
-{
-    return w * l;
-    // call with one argument, the other argument will take default value
-    // e.g., area_with_default_side(5.0) will be treated as area_with_default(5,10)
-
-    // call with two arguments, both arguments will take the provided values
-    // e.g., area_with_default_side(5.0,6.0) will be treated as exactly as area(5.0,6.0)
-}
-
 double area(double a, double b, double sinC)
 {
     return 0.5 * a * b * sinC;
@@ -105,33 +90,6 @@ double area(int a, int b, int c)
     // static_case<double>(int_var)
     // static_case<int>(double_var)
     // static_case<int>(char_var)
-}
-
-int sum(int a, int b)
-{
-    int result = a + b;
-    a = a + 100;
-    std::cout << "a within the sum function is " << a << std::endl;
-    return result;
-}
-
-int sum2(int &a, int b)
-{
-    int result = a + b;
-    a = a + 100;
-    std::cout << "a within the sum2 function is " << a << std::endl;
-    return result;
-}
-
-bool calc(int a, int b, int c)
-{
-    // function stub example
-    // assuming that we will implement this function later
-    // for now, just return true to get the program compiled
-
-    GLOBAL = GLOBAL + 1; // no need to declare GLOBAL since it's declared in the beginning of the file
-    std::cout << "GLOBAL is now " << GLOBAL << std::endl;
-    return true;
 }
 
 #endif

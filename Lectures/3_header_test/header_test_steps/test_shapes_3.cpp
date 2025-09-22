@@ -1,10 +1,14 @@
-// This is final version of test_shapes.cpp
+// This is test_shapes_3.cpp
+// Changes from test_shapes_2.cpp
+// 1. test function passing by value vs passing by reference
+// 2. std::cout inside and outside the functions (passed by value) to see the difference
+// 3. test function with default argument
 
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
 #include <string>
-#include "shapes.hpp"
+#include "shapes_3.hpp"
 
 TEST_CASE("Test Conversion", "[conversion]")
 {
@@ -73,15 +77,4 @@ TEST_CASE("Test Area with Default Argument", "[area_with_default_side]")
 
     double l = 6.0;
     REQUIRE(area_with_default_side(w, l) == 30.0); // l will take provided value of 6.0
-}
-
-TEST_CASE("Test calc function stub and GLOBAL variable", "[calc]")
-{
-    int a = 3, b = 4, c = 5;
-    REQUIRE(calc(a, b, c) == true); // just test if it returns true
-    // Meanwhile check std::cout output for GLOBAL variable
-
-    int x = 1, y = 2, z = 3;
-    REQUIRE(calc(x, y, z) == true);
-    // Meanwhile check std::cout output for GLOBAL variable
 }

@@ -1,10 +1,14 @@
-// This is final version of test_shapes.cpp
+// This is test_shapes_2.cpp
+// Changes from test_shapes_1.cpp
+// 1. Test area with overloaded functions
+// 2. Test both valid and invalid inputs
+// 3. Test floating number comparisons
 
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
 #include <string>
-#include "shapes.hpp"
+#include "shapes_2.hpp"
 
 TEST_CASE("Test Conversion", "[conversion]")
 {
@@ -48,40 +52,4 @@ TEST_CASE("Test Area with Floating Number Comparisons", "[area]")
     double threshold = 1e-3;
     double result = 3.14159 * 1.0 * 1.0;
     REQUIRE(std::abs(result - area(a)) <= threshold);
-}
-
-TEST_CASE("Test sum function with passing by value", "[sum]")
-{
-    int a = 301;
-    int b = 1;
-    REQUIRE(sum(a, b) == 302);
-    std::cout << "a outside the sum function is " << a << std::endl;
-}
-
-TEST_CASE("Test sum2 function with passing by reference", "[sum2]")
-{
-    int a = 301;
-    int b = 1;
-    REQUIRE(sum2(a, b) == 302);
-    std::cout << "a outside the sum2 function is " << a << std::endl;
-}
-
-TEST_CASE("Test Area with Default Argument", "[area_with_default_side]")
-{
-    double w = 5.0;
-    REQUIRE(area_with_default_side(w) == 50.0); // l will take default value of 10.0
-
-    double l = 6.0;
-    REQUIRE(area_with_default_side(w, l) == 30.0); // l will take provided value of 6.0
-}
-
-TEST_CASE("Test calc function stub and GLOBAL variable", "[calc]")
-{
-    int a = 3, b = 4, c = 5;
-    REQUIRE(calc(a, b, c) == true); // just test if it returns true
-    // Meanwhile check std::cout output for GLOBAL variable
-
-    int x = 1, y = 2, z = 3;
-    REQUIRE(calc(x, y, z) == true);
-    // Meanwhile check std::cout output for GLOBAL variable
 }

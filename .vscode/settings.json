@@ -24,6 +24,7 @@
   "cmake.sourceDirectory": [
     "${workspaceFolder}/Lectures/4_arrays/arrays_starter",
     "${workspaceFolder}/Lectures/3_header_test/header_test_end",
+    "${workspaceFolder}/Lectures/3_header_test/header_test_steps",
     "${workspaceFolder}/Lectures/3_header_test/header_test_starter",
     "${workspaceFolder}/Problems/problem03",
     "${workspaceFolder}/Lectures/2_shape_func/shape_func_end",

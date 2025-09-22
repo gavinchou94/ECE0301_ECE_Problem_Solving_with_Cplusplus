@@ -1,10 +1,13 @@
-// This is final version of test_shapes.cpp
+// This is test_shapes_4.cpp
+// Changes from test_shapes_3.cpp
+// 1. test function stub and GLOBAL variable
+// 2. show that GLOBAL variable is shared within the same TEST_CASE across multiple function calls
 
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
 #include <string>
-#include "shapes.hpp"
+#include "shapes_4.hpp"
 
 TEST_CASE("Test Conversion", "[conversion]")
 {
