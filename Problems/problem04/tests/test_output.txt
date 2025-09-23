@@ -1,0 +1,9 @@
+If R = 1000.000 Ohms and P = 2.500 Watts, then I = 0.050 Amps.
+If I = 0.050 Amps and R = 1000.000 Ohms, then P = 2.500 Watts.
+If I = 0.050 Amps and P = 2.500 Watts, then R = 1000.000 Ohms.
+If R = 10000.000 Ohms and I = 0.100 Amps, then P = 100.000 Watts.
+If P = 100.000 Watts and R = 10000.000 Ohms, then I = 0.100 Amps.
+If R = 50.000 Ohms and P = 2.000 Watts, then I = 0.200 Amps.
+If P = 4.900 Watts and I = 0.700 Amps, then R = 10.000 Ohms.
+If R = 8.100 Ohms and I = 0.100 Amps, then P = 0.081 Watts.
+If P = 5.000 Watts and R = 1.000 Ohms, then I = 2.236 Amps.
