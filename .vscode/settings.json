@@ -23,6 +23,8 @@
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
     "${workspaceFolder}/Problems/problem04",
+    "${workspaceFolder}/Lectures/4_arrays/arrays_end",
+    "${workspaceFolder}/Lectures/4_arrays/arrays_steps",
     "${workspaceFolder}/Lectures/4_arrays/arrays_starter",
     "${workspaceFolder}/Lectures/3_header_test/header_test_end",
     "${workspaceFolder}/Lectures/3_header_test/header_test_steps",
