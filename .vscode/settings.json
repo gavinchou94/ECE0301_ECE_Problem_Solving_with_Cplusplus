@@ -22,6 +22,8 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/5_pointers/pointers_end",
+    "${workspaceFolder}/Lectures/5_pointers/pointers_steps",
     "${workspaceFolder}/Lectures/5_pointers/pointers_starter",
     "${workspaceFolder}/Problems/problem05",
     "${workspaceFolder}/Problems/problem04",
