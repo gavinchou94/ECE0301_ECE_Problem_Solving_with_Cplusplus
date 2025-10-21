@@ -89,3 +89,80 @@ TEST_CASE("Test search", "[database]")
 }
 
 /* Write your own test cases here */
+TEST_CASE("Test Search Missing", "[database][search]")
+{
+    double *db = new double[ENTRIES * COLS];
+    initialize(db);
+
+    REQUIRE_FALSE(search("Temperature", 315, db, ENTRIES));
+    REQUIRE_FALSE(search("Class", 3.1415, db, ENTRIES));
+    REQUIRE_FALSE(search("ID", 2.1, db, ENTRIES));
+
+    delete[] db;
+}
+TEST_CASE("Test Add Moon", "[database][search][add_entry]")
+{
+    int oldrows = ENTRIES;
+    double *db = new double[ENTRIES * COLS];
+    initialize(db);
+    int rows = oldrows;
+
+    const double moon[COLS] = {301, 3, 1737.4, 7.349e22, 3.3437, 27.321582};
+
+    REQUIRE(add_entry(moon, db, rows));
+    REQUIRE(rows == oldrows + 1);
+    REQUIRE(search("ID", 301.0, db, rows));
+    REQUIRE(search("Mean Radius", 1737.4, db, rows));
+
+    delete[] db;
+}
+TEST_CASE("Test Copy Earth", "[database][search][add_entry]")
+{
+    int oldrows = ENTRIES;
+    double *db = new double[ENTRIES * COLS];
+    initialize(db);
+    int rows = oldrows;
+
+    const double copyearth[COLS] = {DATA[3][0], DATA[3][1], DATA[3][2], DATA[3][3], DATA[3][4], DATA[3][5]};
+
+    REQUIRE_FALSE(add_entry(copyearth, db, rows));
+    REQUIRE(rows == oldrows);
+    REQUIRE(search("ID", 399, db, rows));
+
+    delete[] db;
+}
+TEST_CASE("Test Remove Sun", "[database][remove_entry]")
+{
+    double *db = new double[ENTRIES * COLS];
+    initialize(db);
+    int row = ENTRIES;
+
+    double sunid = 10;
+
+    REQUIRE(search("ID", sunid, db, row));
+    REQUIRE(remove_entry(sunid, db, row));
+    REQUIRE(row == ENTRIES - 1);
+    REQUIRE_FALSE(search("ID", sunid, db, row));
+    REQUIRE(search("ID", 399, db, row));
+    REQUIRE_FALSE(remove_entry(9999, db, row));
+
+    delete[] db;
+}
+TEST_CASE("Test search add remove", "[database][search][add_entry][remove_entry]")
+{
+    int oldrows = ENTRIES;
+    double *db = new double[ENTRIES * COLS];
+    initialize(db);
+    int rows = oldrows;
+
+    const double moon[COLS] = {301, 3, 1737.4, 7.349e22, 3.3437, 27.321582};
+
+    REQUIRE(add_entry(moon, db, rows));
+    REQUIRE(search("ID", 301.0, db, rows));
+    REQUIRE(remove_entry(399, db, rows)); // Goodbye Earth
+    REQUIRE_FALSE(search("ID", 399, db, rows));
+    REQUIRE(search("ID", 301, db, rows));
+    REQUIRE(rows == ENTRIES);
+
+    delete[] db;
+}

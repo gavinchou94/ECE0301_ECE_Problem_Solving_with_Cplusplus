@@ -22,6 +22,7 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/7_struct_class/struct_classes_starter",
     "${workspaceFolder}/Problems/problem07",
     "${workspaceFolder}/Lectures/6_vector/vector_end",
     "${workspaceFolder}/Lectures/6_vector/vector_steps",
@@ -115,5 +116,17 @@
     "variant": "cpp",
     "unordered_set": "cpp",
     "utility": "cpp",
+    "atomic": "cpp",
+    "bit": "cpp",
+    "exception": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "memory": "cpp",
+    "memory_resource": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "system_error": "cpp",
+    "type_traits": "cpp",
+    "cinttypes": "cpp"
   }
 }

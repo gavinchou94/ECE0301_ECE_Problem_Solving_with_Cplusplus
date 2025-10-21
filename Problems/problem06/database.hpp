@@ -58,6 +58,20 @@ bool search(const std::string field, const double value,
             const double *database, const int rows)
 {
     // TODO
+    int col = column_index(field);
+
+    if (col == -1)
+        return false;
+
+    for (int i = 0; i < rows; i++)
+    {
+        int dbindex = index(i, col);
+        double dbval = database[dbindex];
+        if (std::abs(dbval - value) <= THRESHOLD)
+        {
+            return true;
+        }
+    }
     return false;
 }
 
@@ -65,14 +79,72 @@ bool add_entry(const double new_row[],
                double *&database, int &rows)
 {
     // TODO, refer to general workflow of append() in steps/pointers_6.hpp
-    return false;
+    if (search(FIELDS[0], new_row[0], database, rows))
+    {
+        return false;
+    }
+    double *newdb = new double[(rows + 1) * COLS];
+
+    for (int i = 0; i < rows * COLS; i++)
+    {
+        newdb[i] = database[i];
+    }
+    for (int j = 0; j < COLS; j++)
+    {
+        newdb[index(rows, j)] = new_row[j];
+    }
+    delete[] database;
+    database = newdb;
+    rows++;
+    return true;
 }
 
 bool remove_entry(const double id,
                   double *&database, int &rows)
 {
     // TODO
-    return false;
-}
+    if (!search(FIELDS[0], id, database, rows))
+    {
+        return false;
+    }
+    int remove_r = -1;
+    for (int i = 0; i < rows; i++)
+    {
+        double dbid = database[index(i, 0)];
+        if (std::abs(dbid - id) <= THRESHOLD)
+        {
+            remove_r = i;
+            break;
+        }
+    }
+    if (remove_r == -1)
+    {
+        return false;
+    }
+    int newr = rows-1;
+    delete[] database;
 
+    if (newr == 0)
+    {
+        database = nullptr;
+        rows = newr;
+        return true;
+    }
+    double *newdata = new double[newr * COLS];
+    int newdbi = 0;
+    for (int i = 0; i < rows; i++)
+    {
+        if (i != remove_r)
+        {
+            for (int j = 0; j < COLS; j++)
+            {
+                newdata[newdbi] = database[index(i, j)];
+                newdbi++;
+            }
+        }
+    }
+    database = newdata;
+    rows = newr;
+    return true;
+}
 #endif

@@ -1,0 +1,3 @@
+If R = 200.000 Ohms and I = 2.000 Amps, then P = 800.000 Watts.
+If I = 0.100 Amps and R = 200.000 Ohms, then P = 2.000 Watts.
+If I = 0.100 Amps and R = 2.000 Ohms, then P = 0.020 Watts.

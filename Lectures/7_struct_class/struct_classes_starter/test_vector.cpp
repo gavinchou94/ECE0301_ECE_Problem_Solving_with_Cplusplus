@@ -1,5 +1,4 @@
 // This is final version of test_vector.cpp
-// Clear some comments of test_vector_7.cpp
 
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
@@ -11,9 +10,8 @@ TEST_CASE("Vector init", "[vector-empty]")
     // declare vector of type <int>, <double>
     std::vector<int> vec1;
 
-    // without any modifier after vec1, it is initialized as empty
-    REQUIRE(vec1.empty());
-    REQUIRE(vec1.size() == 0);
+    REQUIRE(vec1.empty());     // empty() function returns false/true
+    REQUIRE(vec1.size() == 0); // vector has size() function that returns an int
 }
 
 TEST_CASE("Vector init with size", "[vector-size]")
@@ -29,6 +27,7 @@ TEST_CASE("Vector init with size", "[vector-size]")
         REQUIRE(vec1[i] == 0);
     }
 
+    // same as array, [] is used in vector to access/update indexed content
     vec1[0] = 1;
     vec1[1] = 4;
     vec1[2] = 9;
@@ -44,7 +43,9 @@ TEST_CASE("Vector updating size via push and pop", "[vector-update]")
     // vec1[0]=4; // this would run into bad-access error since vec1 is still empty
     REQUIRE(vec1.empty());
 
-    vec1.push_back(1);
+    // Unlike array, vector object can be easily modified in terms of size
+    // no need to start a new vector object
+    vec1.push_back(1); // push_back(?) appends one element at the end of vector object
     REQUIRE(vec1.size() == 1);
     REQUIRE(vec1[0] == 1);
 
@@ -53,7 +54,7 @@ TEST_CASE("Vector updating size via push and pop", "[vector-update]")
     REQUIRE(vec1[0] == 1);
     REQUIRE(vec1[1] == 4);
 
-    vec1.pop_back();
+    vec1.pop_back(); // pop_back() removes one element at the end of vector object, no arg required
     REQUIRE(vec1.size() == 1);
     vec1.pop_back();
     REQUIRE(vec1.empty());
@@ -62,15 +63,17 @@ TEST_CASE("Vector updating size via push and pop", "[vector-update]")
 
 TEST_CASE("Vector insert and erase", "[vector]")
 {
-
+    // vector is initialized either using size modifier or explicitly {x0, x1, ...}
     std::vector<int> vec1 = {1, 4, 9, 16};
 
+    // update vector content at certain index
     // e.g., desired vec1 is {1,3,4,9,16}
 
     // vec1.insert(1, 3); // This would run into error since arg1 in function insert(arg1, arg2)
-    // should essentially be an address ptr
+    // should act like an addr ptr
     std::vector<int>::iterator start_addr = vec1.begin();
 
+    // vec1.begin() is the ptr to first element, +n would move ptr n positions
     vec1.insert(vec1.begin() + 1, 3); // this would insert at index 1 an int 3
     REQUIRE(vec1[0] == 1);
     REQUIRE(vec1[1] == 3);
@@ -78,6 +81,8 @@ TEST_CASE("Vector insert and erase", "[vector]")
     REQUIRE(vec1[3] == 9);
     REQUIRE(vec1[4] == 16);
     REQUIRE(vec1.size() == 5);
+
+    // vec1.erase(arg1) would erase the content at arg1 position, arg1 also acts like an addr ptr
 
     // e.g., desired vec1 is now {1,3,9,16}
     vec1.erase(vec1.begin() + 2);
@@ -90,42 +95,53 @@ TEST_CASE("Vector insert and erase", "[vector]")
 
 TEST_CASE("Vector indexing via []", "[vector]")
 {
-
-    std::vector<int> vec1 = {1, 4, 9, 16};
+    std::vector<int> vec1 = {1, 4, 9, 16}; // vector initializing with size=4
     int val = vec1[4];
     std::cout << val << std::endl; // vector bad access via [] won't get into error, but val undefined
 
-    // vec1[9] = 25; // vector update via [] has similar behavior, but the update has no effect
+    vec1[9] = 25; // vector update via [] has similar behavior, but the update has no effect
+
+    // indexing through [] has higher access speed, but less security
 }
 
 TEST_CASE("Vector indexing via at", "[vector]")
 {
-
     std::vector<int> vec2 = {1, 4, 9, 16}; // vector initializing with size=4
 
-    // int val = vec2.at(4);                             // vector bad access via .at() won't get into error, but throws an exception
-    // std::cout << val << std::endl;                    // val is not assigned value yet due to exception
+    // int val = vec2.at(4); // vector bad access via .at() won't get into error, but throws an exception
+    // std::cout << val << std::endl; // val is not assigned value yet due to exception
 
-    // vec2.at(5) = 36;                                  // vector update via .at() also throws an exception
+    // vec2.at(5) = 36; // vector update via .at() also throws an exception
 
     // THROWS_AS is another type of REQUIRE statement
     REQUIRE_THROWS_AS(vec2.at(6), std::out_of_range);
     REQUIRE_THROWS_AS(std::stod("abcd"), std::invalid_argument);
+
+    // indexing through .at() is slower but safer since it avoids bad access by throwing an exception
 }
 
 TEST_CASE("Vector of other data type and ADT", "[vector]")
 {
-
-    std::vector<double> vec1 = {1.1, 2.728, 5.2}; // vector initializing with double type
-    std::vector<char> vec2 = {'e', 'c', 'e'};     // vector initializing with char type
+    std::vector<double> vec1 = {1.1, 2.728, 5.2};
+    std::vector<char> vec2 = {'e', 'c', 'e'};
     REQUIRE(std::abs(vec1[1] - 2.728) <= 1e-9);
     REQUIRE(vec2[1] == 'c');
+
+    struct Student
+    {
+        int id;
+        std::string name;
+    }; // define a struct "Student", you can think this as a custom data type
+    Student pitt_student{1234, "tim"}; // declare a variable pitt_student of Student type
+
+    REQUIRE(pitt_student.id == 1234);
+    REQUIRE(pitt_student.name == "tim"); // access struct type via obj.field
 
     struct Entry
     {
         char name;
         int val;
-    };
+    }; // define a struct "Entry"
 
     // vector initializing with struct Entry type
     std::vector<Entry> vec3 = {{'e', 14}, {'c', 12}, {'e', 14}}; // a vector of size=3
