@@ -22,6 +22,7 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Problems/problem07",
     "${workspaceFolder}/Lectures/6_vector/vector_end",
     "${workspaceFolder}/Lectures/6_vector/vector_steps",
     "${workspaceFolder}/Lectures/6_vector/vector_starter",
