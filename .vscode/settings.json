@@ -22,6 +22,8 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/7_struct_class/struct_classes_end",
+    "${workspaceFolder}/Lectures/7_struct_class/struct_classes_steps",
     "${workspaceFolder}/Lectures/7_struct_class/struct_classes_starter",
     "${workspaceFolder}/Problems/problem07",
     "${workspaceFolder}/Lectures/6_vector/vector_end",
