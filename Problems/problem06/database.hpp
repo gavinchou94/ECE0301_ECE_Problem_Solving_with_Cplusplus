@@ -79,6 +79,7 @@ bool add_entry(const double new_row[],
                double *&database, int &rows)
 {
     // TODO, refer to general workflow of append() in steps/pointers_6.hpp
+    //std::cout << rows << std::endl;
     if (search(FIELDS[0], new_row[0], database, rows))
     {
         return false;
@@ -96,6 +97,7 @@ bool add_entry(const double new_row[],
     delete[] database;
     database = newdb;
     rows++;
+    //std::cout << rows << std::endl;
     return true;
 }
 
@@ -121,7 +123,7 @@ bool remove_entry(const double id,
     {
         return false;
     }
-    int newr = rows-1;
+    int newr = rows - 1;
     delete[] database;
 
     if (newr == 0)

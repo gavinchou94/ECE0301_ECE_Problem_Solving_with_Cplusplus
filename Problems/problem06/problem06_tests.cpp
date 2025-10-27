@@ -166,3 +166,46 @@ TEST_CASE("Test search add remove", "[database][search][add_entry][remove_entry]
 
     delete[] db;
 }
+TEST_CASE("Test Search Invalid and Valid Values", "[database][search]")
+{
+    double *db = new double[ENTRIES * COLS];
+    initialize(db);
+
+    REQUIRE_FALSE(search("Rank", 10, db, ENTRIES));
+}
+TEST_CASE("Test Duplicate Entry", "[database][search][add_entry]")
+{
+    int oldrows = ENTRIES;
+    double *db = new double[ENTRIES * COLS];
+    initialize(db);
+    int rows = oldrows;
+    // Before Copying: rows == ENTRIES
+    std::cout << rows << std::endl;
+
+    const double sun[COLS] = {DATA[0][0], DATA[0][1], DATA[0][2], DATA[0][3], DATA[0][4], DATA[0][5]};
+
+    REQUIRE_FALSE(add_entry(sun, db, rows));
+    // After Copying
+    std::cout << rows << std::endl;
+}
+TEST_CASE("Test Duplicate Values and Aliases")
+{
+    int size = 4;
+    int *db = new int[size]{1, 4, 9, 16};
+    int *dbcopy = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        dbcopy[i] = db[i];
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        REQUIRE(dbcopy[i] == db[i]);
+    }
+    REQUIRE_FALSE(dbcopy == db);
+
+    delete[] db;
+    db == nullptr;
+    delete[] dbcopy;
+}
