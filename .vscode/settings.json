@@ -22,6 +22,11 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/9_inh_overriding/inh_overriding_starter",
+    "${workspaceFolder}/Problems/problem09",
+    "${workspaceFolder}/Lectures/8_class_memory/class_memory_end",
+    "${workspaceFolder}/Lectures/8_class_memory/class_memory_steps",
+    "${workspaceFolder}/Lectures/8_class_memory/class_memory_starter",
     "${workspaceFolder}/Problems/problem08",
     "${workspaceFolder}/Lectures/7_struct_class/struct_classes_end",
     "${workspaceFolder}/Lectures/7_struct_class/struct_classes_steps",
