@@ -26,6 +26,8 @@ SafeArray::~SafeArray()
     delete[] dataptr;
 }
 
+// to use "SafeArray arr1(arr2)", this copy constructor has to be built since dataptr is a pointer
+// if there is no ptr member variable in the class, no need build this, e.g., Date d1(d2) works!
 SafeArray::SafeArray(const SafeArray &s)
 {
     std::cout << "Welcome to use copy constructor" << std::endl;
@@ -37,6 +39,8 @@ SafeArray::SafeArray(const SafeArray &s)
     }
 }
 
+// to use "arr1 = arr2", this copy assignment operator has to be built since dataptr is a pointer
+// if there is no ptr member variable in the class, no need build this, e.g., Date d1 = d2 works!
 SafeArray &SafeArray::operator=(SafeArray s)
 {
     size = s.size;

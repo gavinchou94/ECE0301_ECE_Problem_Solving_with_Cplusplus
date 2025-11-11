@@ -46,4 +46,14 @@ TEST_CASE("Test index[] operator update", "[safearray]")
     // see in VS code what error would it pop up
     // SafeArray arr2(arr);
     // SafeArray arr3 = arr;
+
+    // Did you notice that a segment fault would happen when you run the code above?
+    // This is because memberwise assignment would just copy the pointer value,
+    // so arr.dataptr and arr2.dataptr would share the same memory location, so as arr3.dataptr
+    // When arr, arr2, arr3 get destructed, the same memory would be deleted multiple times,
+    // which would cause segment fault.
+
+    // While reversing back to not customizing destructor would not cause segment fault,
+    // it would cause memory leak since the dynamically allocated memory would never get deleted.
+    // Therefore, a proper copy is needed!
 }

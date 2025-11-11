@@ -66,7 +66,7 @@ TEST_CASE("Test copy constructor", "[safearray]")
 
     // Uncomment below to try to copy an object
     // see in VS code what error would it pop up
-    SafeArray arr3(7);
-    arr3 = arr;
-    std::cout << "Hi" << std::endl;
+    // SafeArray arr3(7);
+    // arr3 = arr;
+    // std::cout << "Hi" << std::endl;
 }

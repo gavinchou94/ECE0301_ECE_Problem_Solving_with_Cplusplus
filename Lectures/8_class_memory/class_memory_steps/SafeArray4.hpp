@@ -38,3 +38,18 @@ public:
 };
 
 #endif
+
+// Note on copy-swap-idiom:
+// In the copy assignment operator above, we use copy-swap-idiom:
+// 1. passing by value: SafeArray s (this would call copy constructor to create a copy of RHS object)
+// 2. swap the member variables of this object with the copy object's member variables
+// 3. return *this
+
+// This approach would automatically handle self-assignment case and
+// also free old memory properly when the copy object goes out of scope.
+// this object's old memory is now owned by the copy object after swap,
+// so when copy object gets destructed (i.e., once this operator=() function finishes)
+// these old memory would be freed properly.
+
+// Everything has two sides though, the downside of copy-swap-idiom is
+// that it would create a copy of RHS object first, which might be expensive if the object is large.

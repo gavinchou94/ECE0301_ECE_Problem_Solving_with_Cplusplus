@@ -40,3 +40,27 @@ SafeArray operator+(const SafeArray &, int); // pass by const reference
 SafeArray operator+(int, const SafeArray &); // pass by const reference
 
 #endif
+
+// Note on non-member operator functions:
+// Here we implement two non-member operator functions to support
+// SafeArray + int and int + SafeArray operations.
+
+// Conventionally, when overloading arithmetic operators (binary operators),
+// if the left-hand side (LHS) operand is an object of the class,
+// the operator is usually implemented as a non-member function.
+
+// But if the operator is a unary operator,
+// the operator is usually implemented as a member function.
+// For example, operator++() to add 1 to all elements in SafeArray
+// the prototype would be SafeArray &operator++(); implemented inside the class.
+// & is needed since it would update the object itself and return *this.
+
+// Its full implementation in .cpp could be like:
+// SafeArray &SafeArray::operator++()
+// {
+//     for (int i = 0; i < size; i++)
+//     {
+//         dataptr[i] += 1;
+//     }
+//     return *this;
+// }

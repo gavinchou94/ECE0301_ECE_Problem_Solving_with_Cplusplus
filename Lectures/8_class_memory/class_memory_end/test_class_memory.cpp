@@ -58,7 +58,7 @@ TEST_CASE("Test copy constructor/assignment", "[safearray]")
     SafeArray arr4(7);
     arr4 = arr3; // arr4 is assigned value using copy assignment
 
-    // close this testing case w/t and w/o customed copy assignment, see diff in VS Code
+    // close this testing case w/t and w/o custom copy assignment, see diff in VS Code
 
     int test[] = {1, 4, 0, 0, 0};
     for (int i = 0; i < size; i++)
