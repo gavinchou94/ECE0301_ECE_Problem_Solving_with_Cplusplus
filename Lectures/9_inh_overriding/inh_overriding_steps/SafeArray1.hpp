@@ -6,30 +6,31 @@
 #ifndef _SAFE_ARRAY_HPP
 #define _SAFE_ARRAY_HPP
 
-class SafeArray {
-    private:
-        int * dataptr;
-        int size;
-    
-    public:
-        SafeArray();
-        SafeArray(int);
-        ~SafeArray(); // has to include this due to dataptr
+class SafeArray
+{
+private:
+    int *dataptr;
+    int size;
 
-        // this is copy constructor
-        SafeArray(const SafeArray&); 
+public:
+    SafeArray();
+    SafeArray(int);
+    ~SafeArray(); // has to include this due to dataptr
 
-        // this is copy assignment
-        SafeArray &operator=(SafeArray);
+    // this is copy constructor
+    SafeArray(const SafeArray &);
 
-        int get_size() const;
-        //int operator[](int) const;  // overloading [] for SafeArray object to just access the information
-        int get(int) const;           // change [] to get() for SafeArray object to access
-        //int &operator[](int);       // overloading [] for SafeArray object to update the information
-        void set(int, int);           // change [] to set( , ) for SafeArray object to update
+    // this is copy assignment
+    SafeArray &operator=(SafeArray);
+
+    int get_size() const;
+    // int operator[](int) const;  // overloading [] for SafeArray object to just access the information
+    int get(int) const; // change [] to get() for SafeArray object to access
+    // int &operator[](int);       // overloading [] for SafeArray object to update the information
+    void set(int, int); // change [] to set( , ) for SafeArray object to update
 };
 
-SafeArray operator+(const SafeArray&, int); // pass by const reference
-SafeArray operator+(int, const SafeArray&); // pass by const reference
+SafeArray operator+(const SafeArray &, int); // pass by const reference
+SafeArray operator+(int, const SafeArray &); // pass by const reference
 
 #endif

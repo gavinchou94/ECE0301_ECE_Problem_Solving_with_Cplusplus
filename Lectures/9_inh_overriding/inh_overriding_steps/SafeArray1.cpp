@@ -1,12 +1,12 @@
 // This is SafeArray1.cpp
 // Changes from starter code of SafeArray.cpp
 // 1. implementing get() for accessing
-// 2. implementing set ( , ) for updating
+// 2. implementing set( , ) for updating
 // 3. updating + operator accordingly
 
 #include "SafeArray1.hpp"
-#include<stdexcept>
-#include<algorithm>
+#include <stdexcept>
+#include <algorithm>
 
 SafeArray::SafeArray() : size(0), dataptr(nullptr)
 {
@@ -15,26 +15,28 @@ SafeArray::SafeArray() : size(0), dataptr(nullptr)
 SafeArray::SafeArray(int s) : size(s)
 {
     dataptr = new int[size];
-    for (int i=0; i<size; i++){
-        dataptr[i]=0;
+    for (int i = 0; i < size; i++)
+    {
+        dataptr[i] = 0;
     }
 }
 
 SafeArray::~SafeArray()
 {
-    delete [] dataptr;
+    delete[] dataptr;
 }
 
 SafeArray::SafeArray(const SafeArray &s)
 {
     size = s.size;
     dataptr = new int[size];
-    for (int i=0; i<size; i++){
-        dataptr[i]=s.dataptr[i];
+    for (int i = 0; i < size; i++)
+    {
+        dataptr[i] = s.dataptr[i];
     }
 }
 
-SafeArray & SafeArray::operator=(SafeArray s)
+SafeArray &SafeArray::operator=(SafeArray s)
 {
     size = s.size;
     std::swap(dataptr, s.dataptr); // this requires <algorithm>
@@ -55,9 +57,10 @@ int SafeArray::get_size() const
 //     return dataptr[idx];
 // }
 
-int SafeArray::get(int idx) const
+int SafeArray::get(int idx) const // accessing, similar to operator[], avoid derived class overloading operators
 {
-    if (idx<0 || idx>=size){
+    if (idx < 0 || idx >= size)
+    {
         throw std::out_of_range("Index out of range");
     }
     return dataptr[idx];
@@ -71,25 +74,27 @@ int SafeArray::get(int idx) const
 //     return dataptr[idx];
 // }
 
-void SafeArray::set(int idx, int val)
+void SafeArray::set(int idx, int val) // updating, similar to operator[], avoid derived class overloading operators
 {
-    if (idx<0 || idx>=size){
+    if (idx < 0 || idx >= size)
+    {
         throw std::out_of_range("Index out of range");
     }
-    dataptr[idx]=val;
+    dataptr[idx] = val;
 }
 
 // implement a non-member operator overloading function
 SafeArray operator+(const SafeArray &a, int b)
 {
-    SafeArray result(a.get_size());  // element-wise adding b
-    for (int i=0; i<result.get_size(); i++){
-        result.set(i, a.get(i)+b);
+    SafeArray result(a.get_size()); // element-wise adding b
+    for (int i = 0; i < result.get_size(); i++)
+    {
+        result.set(i, a.get(i) + b);
     }
     return result;
 }
 
 SafeArray operator+(int a, const SafeArray &b)
 {
-    return operator+(b,a);
+    return operator+(b, a);
 }
