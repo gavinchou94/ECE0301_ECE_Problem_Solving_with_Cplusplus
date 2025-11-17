@@ -22,6 +22,7 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/10_templates/templates_starter",
     "${workspaceFolder}/Problems/problem10",
     "${workspaceFolder}/Problems/exam2",
     "${workspaceFolder}/Lectures/9_inh_overriding/inh_overriding_end",
