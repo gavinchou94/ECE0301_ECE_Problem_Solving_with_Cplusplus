@@ -22,6 +22,8 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Lectures/10_templates/templates_end",
+    "${workspaceFolder}/Lectures/10_templates/templates_steps",
     "${workspaceFolder}/Lectures/10_templates/templates_starter",
     "${workspaceFolder}/Problems/problem10",
     "${workspaceFolder}/Problems/exam2",
