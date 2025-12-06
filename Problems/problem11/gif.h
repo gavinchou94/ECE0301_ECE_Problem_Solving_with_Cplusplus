@@ -583,7 +583,7 @@ typedef struct
     uint8_t bitIndex; // how many bits in the partial byte written so far
     uint8_t byte;     // current partial byte
 
-    uint8_t padding[2]; // make padding explicit
+    uint8_t padding[2]; // make padding explicit - initialized to 0
 } GifBitStatus;
 
 // insert a single bit
@@ -699,9 +699,7 @@ void GifWriteLzwImage(FILE *f, uint8_t *image, uint32_t left, uint32_t top, uint
     uint32_t maxCode = clearCode + 1;
 
     GifBitStatus stat;
-    stat.byte = 0;
-    stat.bitIndex = 0;
-    stat.chunkIndex = 0;
+    memset(&stat, 0, sizeof(stat)); // Fully initialize the struct including padding bytes and chunk array
 
     GifWriteCode(f, &stat, clearCode, codeSize); // start with a fresh LZW dictionary
 
@@ -860,6 +858,7 @@ bool GifWriteFrame(GifWriter *writer, const uint8_t *image, uint32_t width, uint
     writer->firstFrame = false;
 
     GifPalette pal;
+    memset(&pal, 0, sizeof(pal)); // Initialize all palette members including arrays
     GifMakePalette((dither ? NULL : oldImage), image, width, height, bitDepth, dither, &pal);
 
     if (dither)

@@ -57,7 +57,10 @@ void Grid::set_cell(Location loc, int *val)
         throw std::out_of_range("Grid index out of bounds");
     }
     int index = loc.row * size + loc.col;
-    delete data[index];
+    if (data[index] != nullptr)
+    {
+        delete data[index];
+    }
     data[index] = val;
 }
 
