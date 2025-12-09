@@ -22,6 +22,7 @@
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
+    "${workspaceFolder}/Problems/final_exam",
     "${workspaceFolder}/Problems/problem11",
     "${workspaceFolder}/Lectures/11_interface/interface_end",
     "${workspaceFolder}/Lectures/11_interface/interface_steps",
