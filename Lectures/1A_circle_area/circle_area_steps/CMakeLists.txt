@@ -1,9 +1,22 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
+project(circle_area_steps)
 
-# require a C++11 compiler for all targets
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(circle_area)
-# change the source codes to _3, _3b, _4, _4b, _5, _6, _7, _8 to test
-add_executable(circle_area circle_area_2.cpp)
+set(STEPS
+    circle_area_2.cpp
+    # circle_area_3.cpp
+    # circle_area_3b.cpp
+    # circle_area_4.cpp
+    # circle_area_4b.cpp
+    # circle_area_5.cpp
+    # circle_area_6.cpp
+    # circle_area_7.cpp
+    # circle_area_8.cpp
+)
+
+add_executable(test_circle_area ${STEPS})
+
+enable_testing()
+add_test(NAME test-circle-area COMMAND test_circle_area)

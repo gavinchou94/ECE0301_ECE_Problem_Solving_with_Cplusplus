@@ -5,38 +5,38 @@
 
 enum MONTH
 {
-    JAN = 1,
-    FEB,
-    MAR,
-    APR,
-    MAY,
-    JUN,
-    JUL,
-    AUG,
-    SEP,
-    OCT,
-    NOV,
-    DEC
+  JAN = 1,
+  FEB,
+  MAR,
+  APR,
+  MAY,
+  JUN,
+  JUL,
+  AUG,
+  SEP,
+  OCT,
+  NOV,
+  DEC
 };
 
 class Date
 {
 private:
-    int year;
-    MONTH month;
-    int day;
+  int year;
+  MONTH month;
+  int day;
 
 public:
-    Date();
-    Date(int y, MONTH m, int d);
-    int get_year() const;
-    MONTH get_month() const;
-    int get_day() const;
-    bool set_year(int);
-    bool set_month(MONTH);
-    bool set_day(int);
-    static const int min_year;
-    bool operator==(const Date &);
+  Date();
+  Date(int y, MONTH m, int d);
+  int get_year() const;
+  MONTH get_month() const;
+  int get_day() const;
+  bool set_year(int);
+  bool set_month(MONTH);
+  bool set_day(int);
+  static const int min_year;
+  bool operator==(const Date &) const;
 };
 
 bool operator<(const Date &, const Date &);

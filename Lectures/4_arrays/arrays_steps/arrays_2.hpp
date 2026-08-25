@@ -11,10 +11,10 @@
 // when passing arr to functions, always pass size of array too!
 void display(int arr[], int size) // learn the function prototype syntax here
 {
-    for (int i = 0; i < size; i++)
-    {
-        std::cout << arr[i] << std::endl;
-    }
+  for (int i = 0; i < size; i++)
+  {
+    std::cout << arr[i] << std::endl;
+  }
 }
 
 #endif

@@ -1,14 +1,13 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
+project(problem09)
 
-# require a C++11 compiler for all targets
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(problem09)
-add_executable(test_image test_image.cpp bitmap.hpp Image.hpp Image.cpp catch.hpp)
+add_executable(problem09-tests test_image.cpp bitmap.hpp Image.hpp Image.cpp catch.hpp)
 
 enable_testing()
-add_test(test_image test_image)
+add_test(test-problem09 problem09-tests)
 
 add_custom_target(submission COMMAND
     ${CMAKE_COMMAND} -E tar "cfv" "${CMAKE_CURRENT_BINARY_DIR}/problem09_submission.zip" --format=zip

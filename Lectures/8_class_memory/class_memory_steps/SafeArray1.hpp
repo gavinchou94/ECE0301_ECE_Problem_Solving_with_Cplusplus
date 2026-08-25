@@ -9,15 +9,15 @@
 class SafeArray
 {
 private:
-    int *dataptr;
-    int size;
+  int *dataptr;
+  int size;
 
 public:
-    SafeArray();
-    SafeArray(int);
-    ~SafeArray(); // has to include this due to dataptr
+  SafeArray();
+  SafeArray(int);
+  ~SafeArray(); // has to include this due to dataptr
 
-    int get_size() const;
+  int get_size() const;
 };
 
 #endif

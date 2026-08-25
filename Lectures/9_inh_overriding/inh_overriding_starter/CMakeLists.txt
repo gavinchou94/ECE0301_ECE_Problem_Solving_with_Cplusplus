@@ -1,16 +1,21 @@
-cmake_minimum_required(VERSION 3.10)
-project(inh_overriding)
+cmake_minimum_required(VERSION 3.14)
+project(inh_overriding_starter)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(SOURCE test_inh_overriding.cpp SafeArray.hpp SafeArray.cpp 
-        SearchableArray.hpp SearchableArray.cpp
-        UniqueArray.hpp UniqueArray.cpp
-        catch.hpp)
+set(HEADERS SafeArray.hpp SearchableArray.hpp UniqueArray.hpp catch.hpp)
 
-add_executable(test_inh_overriding ${SOURCE})
+set(SOURCES SafeArray.cpp SearchableArray.cpp UniqueArray.cpp test_inh_overriding.cpp)
+
+add_executable(test_inh_overriding ${SOURCES} ${HEADERS})
 
 enable_testing()
+add_test(NAME test-inh-overriding COMMAND test_inh_overriding)
 
-add_test(test-inh-overriding test_inh_overriding)
+add_custom_target(direct_download
+    COMMAND ${CMAKE_COMMAND} -E tar "cfv"
+        "${CMAKE_CURRENT_BINARY_DIR}/inh_overriding_starter.zip"
+        --format=zip
+        ${SOURCES} ${HEADERS} CMakeLists.txt
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})

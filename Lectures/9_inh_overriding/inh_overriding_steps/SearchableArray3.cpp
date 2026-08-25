@@ -17,12 +17,12 @@
 
 bool SearchableArray::search(int value)
 {
-    for (int i = 0; i < get_size(); i++)
-    {
-        if (dataptr[i] == value)
-        { // dataptr is accessible due to "protected"
-            return true;
-        }
+  for (int i = 0; i < get_size(); i++)
+  {
+    if (dataptr[i] == value)
+    { // dataptr is accessible due to "protected"
+      return true;
     }
-    return false;
+  }
+  return false;
 }

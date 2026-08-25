@@ -1,14 +1,12 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
+project(problem06)
 
-# require a C++11 compiler for all targets
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(problem06)
 add_executable(problem06-tests problem06_tests.cpp database.hpp constants.hpp catch.hpp)
 
 enable_testing()
-
 add_test(test-problem06 problem06-tests)
 
 add_custom_target(submission COMMAND

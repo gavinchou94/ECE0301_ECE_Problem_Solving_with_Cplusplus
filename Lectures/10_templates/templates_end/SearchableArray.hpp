@@ -1,4 +1,6 @@
-// This is final version of SearchableArray.hpp
+/**
+ * This is final version of SearchableArray.hpp
+ */
 
 #ifndef _SEARCHABLE_ARRAY_HPP
 #define _SEARCHABLE_ARRAY_HPP
@@ -9,8 +11,8 @@ template <typename T>                       // declare SearchableArray as a temp
 class SearchableArray : public SafeArray<T> // inherit from SafeArray<T>
 {
 public:
-    using SafeArray<T>::SafeArray; // inherit constructors of SafeArray<T>
-    bool search(T);
+  using SafeArray<T>::SafeArray; // inherit constructors of SafeArray<T>
+  bool search(T);
 };
 
 #include "SearchableArray.tpp"

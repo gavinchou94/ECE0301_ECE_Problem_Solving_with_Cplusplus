@@ -14,16 +14,16 @@
  */
 int *copy(const int *arr, const int size)
 {
-    // function returns a ptr, therefore return type is "int * "
-    // first argument is a ptr to an int array, const is added due to the unmodified feature
-    // second argument is size, also const throughout the function
+  // function returns a ptr, therefore return type is "int * "
+  // first argument is a ptr to an int array, const is added due to the unmodified feature
+  // second argument is size, also const throughout the function
 
-    int *arrcopy = new int[size];
-    for (int i = 0; i < size; i++)
-    {
-        arrcopy[i] = arr[i];
-    }
-    return arrcopy;
+  int *arrcopy = new int[size];
+  for (int i = 0; i < size; i++)
+  {
+    arrcopy[i] = arr[i];
+  }
+  return arrcopy;
 }
 
 /**

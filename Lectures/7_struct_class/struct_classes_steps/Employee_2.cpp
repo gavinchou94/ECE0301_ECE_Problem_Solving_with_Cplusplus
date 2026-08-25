@@ -8,9 +8,9 @@
 // this is the constructor function
 Employee::Employee(std::string n, int p, Date d)
 {
-    name = n; // LHS is attribute, RHS is function arg
-    hourly_paid = p;
-    starting_day = d;
+  name = n; // LHS is attribute, RHS is function arg
+  hourly_paid = p;
+  starting_day = d;
 } // as from the name, constructor initializes the object
 // by assigning the args to object's private attributes
 
@@ -26,33 +26,33 @@ Employee::Employee() : name(""), hourly_paid(0), starting_day({1900, 1, 1})
 
 std::string Employee::get_name() const
 {
-    return name; // private attribute name can be used since we are now inside Employee class
+  return name; // private attribute name can be used since we are now inside Employee class
 }
 
 int Employee::get_hourly_rate() const
 {
-    return hourly_paid; // private attribute hourly_paid can be used, see above
+  return hourly_paid; // private attribute hourly_paid can be used, see above
 }
 
 Date Employee::get_starting_date() const
 {
-    return starting_day; // private attribute starting_day can be used, see above
+  return starting_day; // private attribute starting_day can be used, see above
 }
 
 bool Employee::set_name(std::string n)
 {
-    name = n;    // passing the arg to private attribute
-    return true; // if success, return true
+  name = n;    // passing the arg to private attribute
+  return true; // if success, return true
 }
 
 bool Employee::set_hourly_rate(int p)
 {
-    hourly_paid = p; // same as above
-    return true;
+  hourly_paid = p; // same as above
+  return true;
 }
 
 bool Employee::set_starting_date(Date d)
 {
-    starting_day = d; // same as above
-    return true;
+  starting_day = d; // same as above
+  return true;
 }

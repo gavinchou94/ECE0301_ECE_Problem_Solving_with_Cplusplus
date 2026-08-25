@@ -8,9 +8,9 @@
 // this is the constructor function
 Employee::Employee(std::string n, int p, Date d)
 {
-    name = n; // LHS is attribute name, RHS is constructor arg
-    hourly_paid = p;
-    starting_day = d;
+  name = n; // LHS is attribute name, RHS is constructor arg
+  hourly_paid = p;
+  starting_day = d;
 } // as from the name, constructor initializes the object
 // by assigning the args to object's private attributes
 
@@ -21,15 +21,15 @@ Employee::Employee(std::string n, int p, Date d)
 
 std::string Employee::get_name() const
 {
-    return name; // private attribute name can be used since Employee class private definition is visible
+  return name; // private attribute name can be used since Employee class private definition is visible
 } // if you declare and then return "std::string name; return name;", it would be an error
 
 int Employee::get_hourly_rate() const
 {
-    return hourly_paid; // private attribute hourly_paid can be used, see above
+  return hourly_paid; // private attribute hourly_paid can be used, see above
 }
 
 Date Employee::get_starting_date() const
 {
-    return starting_day; // private attribute starting_day can be used, see above
+  return starting_day; // private attribute starting_day can be used, see above
 }

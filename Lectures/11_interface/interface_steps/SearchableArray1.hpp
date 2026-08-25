@@ -9,8 +9,8 @@ template <typename T>                       // declare SearchableArray as a temp
 class SearchableArray : public SafeArray<T> // inherit from SafeArray<T>
 {
 public:
-    using SafeArray<T>::SafeArray; // inherit constructors of SafeArray<T>
-    bool search(T);
+  using SafeArray<T>::SafeArray; // inherit constructors of SafeArray<T>
+  bool search(T);
 };
 
 #include "SearchableArray1.tpp"

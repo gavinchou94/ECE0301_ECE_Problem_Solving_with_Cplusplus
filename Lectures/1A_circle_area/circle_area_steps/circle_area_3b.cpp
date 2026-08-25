@@ -7,11 +7,11 @@
 
 int main()
 {
-    int radius = 4;
-    const double PI = 3.14159;
+  int radius = 4;
+  const double PI = 3.14159;
 
-    // calculate and output area as pi*r^2
-    int area = PI * radius * radius;
-    std::cout << "The area is: ";
-    std::cout << area << std::endl;
+  // calculate and output area as pi*r^2
+  int area = PI * radius * radius;
+  std::cout << "The area is: ";
+  std::cout << area << std::endl;
 }

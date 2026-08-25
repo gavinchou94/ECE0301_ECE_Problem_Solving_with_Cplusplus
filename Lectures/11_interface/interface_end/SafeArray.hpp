@@ -1,5 +1,7 @@
-// This is final version of SafeArray.hpp
-// now SafeArray is derived from Array class
+/**
+ * This is final version of SafeArray.hpp
+ * now SafeArray is derived from Array class
+ */
 
 #ifndef _SAFE_ARRAY_HPP
 #define _SAFE_ARRAY_HPP
@@ -10,23 +12,23 @@ template <typename T>             // add template definition
 class SafeArray : public Array<T> // derive SafeArray from Array<T>
 {
 private:
-    T *dataptr; // pointer to the array of T type
-    int size;
+  T *dataptr; // pointer to the array of T type
+  int size;
 
 public:
-    SafeArray();
-    SafeArray(int);
-    virtual ~SafeArray();
+  SafeArray();
+  SafeArray(int);
+  virtual ~SafeArray();
 
-    // This is copy constructor
-    SafeArray(const SafeArray<T> &); // add <T> to the argument type
+  // This is copy constructor
+  SafeArray(const SafeArray<T> &); // add <T> to the argument type
 
-    // This is copy assignment
-    SafeArray<T> &operator=(SafeArray<T>); // add <T> to the argument type
+  // This is copy assignment
+  SafeArray<T> &operator=(SafeArray<T>); // add <T> to the argument type
 
-    int get_size() const;
-    T get(int) const;         // return T type
-    virtual void set(int, T); // pass T type as argument
+  int get_size() const;
+  T get(int) const;         // return T type
+  virtual void set(int, T); // pass T type as argument
 };
 
 template <typename T>

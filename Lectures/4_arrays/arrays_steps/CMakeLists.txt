@@ -1,12 +1,20 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
+project(arrays_steps)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(arrays)
-# change to _2, _4, _5, ... as needed
-add_executable(test_arrays test_arrays_2.cpp arrays_2.hpp catch.hpp constants.hpp)
+set(STEPS catch.hpp
+    test_arrays_1.cpp
+    # arrays_2.hpp test_arrays_2.cpp
+    # arrays_2.hpp test_arrays_3.cpp
+    # arrays_4.hpp test_arrays_4.cpp
+    # arrays_5.hpp test_arrays_5.cpp
+    # arrays_6.hpp constants.hpp test_arrays_6.cpp
+    # arrays_7.hpp constants.hpp test_arrays_7.cpp
+)
+
+add_executable(test_arrays ${STEPS})
 
 enable_testing()
-
-add_test(test-arrays test_arrays)
+add_test(NAME test-arrays COMMAND test_arrays)

@@ -6,9 +6,9 @@
 
 int main()
 {
-    std::cout << "Hello World!!!" << std::endl;
+  std::cout << "Hello World!!!" << std::endl;
 
-    // use 'return EXIT_SUCCESS;' for better portability and code clarity
-    // as EXIT_SUCCESS is defined by the C++ standard to indicate successful program termination.
-    return EXIT_SUCCESS; // same as return 0;
+  // use 'return EXIT_SUCCESS;' for better portability and code clarity
+  // as EXIT_SUCCESS is defined by the C++ standard to indicate successful program termination.
+  return EXIT_SUCCESS; // same as return 0;
 }

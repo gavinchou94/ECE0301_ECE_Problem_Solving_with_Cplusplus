@@ -9,8 +9,8 @@
 class SearchableArray : public SafeArray
 {
 public:
-    using SafeArray::SafeArray;
-    bool search(int);
+  using SafeArray::SafeArray;
+  bool search(int);
 };
 
 #endif

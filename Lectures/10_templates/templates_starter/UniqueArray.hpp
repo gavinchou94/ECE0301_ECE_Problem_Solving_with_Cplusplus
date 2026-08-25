@@ -6,8 +6,8 @@
 class UniqueArray : public SafeArray
 {
 public:
-    using SafeArray::SafeArray;
-    void set(int index, int value) override final;
+  using SafeArray::SafeArray;
+  void set(int index, int value) override final;
 };
 
 #endif

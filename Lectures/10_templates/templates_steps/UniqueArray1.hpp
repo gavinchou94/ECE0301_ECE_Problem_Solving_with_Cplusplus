@@ -11,8 +11,8 @@
 class UniqueArray : public SafeArray<int>
 {
 public:
-    using SafeArray<int>::SafeArray; // inherit constructors
-    void set(int index, int value) override final;
+  using SafeArray<int>::SafeArray; // inherit constructors
+  void set(int index, int value) override final;
 };
 
 #endif

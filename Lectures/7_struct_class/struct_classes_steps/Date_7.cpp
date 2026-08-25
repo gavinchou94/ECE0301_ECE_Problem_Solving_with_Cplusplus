@@ -3,64 +3,65 @@
 // change all return types of month from int to MONTH
 //
 
-#include "Date_7.hpp"
 #include <stdexcept> // this is required for throw
+
+#include "Date_7.hpp"
 
 const int Date::min_year = 1900;
 
 Date::Date(int y, MONTH m, int d) : month(m), day(d)
 {
-    set_year(y); // calling set_year() would also trigger throw exception
+  set_year(y); // calling set_year() would also trigger throw exception
 }
 
 int Date::get_year() const
 {
-    return year;
+  return year;
 }
 
 MONTH Date::get_month() const
 {
-    return month;
+  return month;
 }
 
 int Date::get_day() const
 {
-    return day;
+  return day;
 }
 
 bool Date::set_year(int y)
 {
-    if (y < min_year)
-    {
-        throw std::invalid_argument{"invalid year"};
-    }
-    year = y;
-    return true;
+  if (y < min_year)
+  {
+    throw std::invalid_argument{"invalid year"};
+  }
+  year = y;
+  return true;
 }
 
 bool Date::set_month(MONTH m)
 {
-    month = m;
-    return true;
+  month = m;
+  return true;
 }
 
 bool Date::set_day(int d)
 {
-    day = d;
-    return true;
+  day = d;
+  return true;
 }
 
 // custom operator == for class Date to directly compare two objects
 // :: to indicate it is a member function
 // can use get_year(), or directly .year
-bool Date::operator==(const Date &d)
+bool Date::operator==(const Date &d) const
 {
-    // if (year == d.get_year() && month == d.get_month() && day == d.get_day())
-    if (year == d.year && month == d.month && day == d.day)
-    {
-        return true;
-    }
-    return false;
+  // if (year == d.get_year() && month == d.get_month() && day == d.get_day())
+  if (year == d.year && month == d.month && day == d.day)
+  {
+    return true;
+  }
+  return false;
 }
 
 // custom operator < for class Date to directly compare two objects
@@ -68,17 +69,17 @@ bool Date::operator==(const Date &d)
 // should use get_year(), not .year
 bool operator<(const Date &d1, const Date &d2)
 {
-    if (d1.get_year() < d2.get_year())
-    {
-        return true;
-    }
-    if (d1.get_year() == d2.get_year() && d1.get_month() < d2.get_month())
-    {
-        return true;
-    }
-    if (d1.get_year() == d2.get_year() && d1.get_month() == d2.get_month() && d1.get_day() < d2.get_day())
-    {
-        return true;
-    }
-    return false;
+  if (d1.get_year() < d2.get_year())
+  {
+    return true;
+  }
+  if (d1.get_year() == d2.get_year() && d1.get_month() < d2.get_month())
+  {
+    return true;
+  }
+  if (d1.get_year() == d2.get_year() && d1.get_month() == d2.get_month() && d1.get_day() < d2.get_day())
+  {
+    return true;
+  }
+  return false;
 }

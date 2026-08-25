@@ -1,17 +1,18 @@
 // This is UniqueArray4.cpp
 // No changes from UniqueArray3.cpp
 
-#include "UniqueArray4.hpp"
 #include <stdexcept>
+
+#include "UniqueArray4.hpp"
 
 void UniqueArray::set(int index, int val)
 {
-    for (int i = 0; i < get_size(); i++)
+  for (int i = 0; i < get_size(); i++)
+  {
+    if (get(i) == val)
     {
-        if (get(i) == val)
-        {
-            throw std::logic_error("Duplicate value");
-        }
+      throw std::logic_error("Duplicate value");
     }
-    SafeArray::set(index, val);
+  }
+  SafeArray::set(index, val);
 }

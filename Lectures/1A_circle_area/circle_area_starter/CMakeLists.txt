@@ -1,11 +1,20 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
+project(circle_area_starter)
 
-# require a C++11 compiler for all targets
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# this project set-up is not useful for now, but would help in the future
-project(circle_area)
+set(SOURCES circle_area_starter.cpp)
+set(HEADERS )
 
-# this is the line that matters, build a target circle_area from source code circle_area_starter.cpp
-add_executable(circle_area circle_area_starter.cpp)
+add_executable(test_circle_area ${SOURCES})
+
+enable_testing()
+add_test(NAME test-circle-area COMMAND test_circle_area)
+
+add_custom_target(direct_download
+    COMMAND ${CMAKE_COMMAND} -E tar "cfv"
+        "${CMAKE_CURRENT_BINARY_DIR}/circle_area_starter.zip"
+        --format=zip
+        ${SOURCES} CMakeLists.txt
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})

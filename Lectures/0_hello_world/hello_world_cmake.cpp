@@ -6,6 +6,6 @@
 
 int main()
 {
-    std::cout << "Hello World using CMake!" << std::endl;
-    return EXIT_SUCCESS;
+  std::cout << "Hello World using CMake!" << std::endl;
+  return EXIT_SUCCESS;
 }

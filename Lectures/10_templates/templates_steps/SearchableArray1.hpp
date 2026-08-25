@@ -11,8 +11,8 @@
 class SearchableArray : public SafeArray<int>
 {
 public:
-    using SafeArray<int>::SafeArray; // class name should be specfied with template argument
-    bool search(int);
+  using SafeArray<int>::SafeArray; // class name should be specfied with template argument
+  bool search(int);
 };
 
 #endif

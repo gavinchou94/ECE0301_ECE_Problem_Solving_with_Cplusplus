@@ -1,17 +1,14 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 project(problem04)
 
-# require a C++11 compiler for all targets
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 
 add_executable(problem04-main problem04.cpp circuits.hpp)
 add_executable(problem04-tests problem04_tests.cpp circuits.hpp catch.hpp)
 add_executable(compare-files compare_files.cpp)
 
 enable_testing()
-
 add_test(test-problem04 problem04-tests)
 add_test(NAME file-input COMMAND problem04-main ${CMAKE_SOURCE_DIR}/tests/input.txt output.txt)
 add_test(NAME file-input-compare COMMAND compare-files ${CMAKE_SOURCE_DIR}/tests/output.txt output.txt)

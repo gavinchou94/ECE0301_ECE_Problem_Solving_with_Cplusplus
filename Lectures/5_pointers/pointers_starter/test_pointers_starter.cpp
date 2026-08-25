@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
 
+#include "catch.hpp"
 #include "pointers_starter.hpp"
 
 TEST_CASE("Test array initialization in dynamic memory", "[ptr-dynamic]")

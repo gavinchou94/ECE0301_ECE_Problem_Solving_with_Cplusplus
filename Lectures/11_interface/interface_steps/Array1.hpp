@@ -7,10 +7,10 @@
 template <typename T>
 class Array // pure virtual (interface) class
 {
-public:                               // don't forget the public access specifier
-    virtual int get_size() const = 0; // virtual with = 0 makes it a pure virtual function
-    virtual T get(int) const = 0;     // virtual with = 0 makes it a pure virtual function
-    virtual void set(int, T) = 0;     // virtual with = 0 makes it a pure virtual function
+public:                             // don't forget the public access specifier
+  virtual int get_size() const = 0; // virtual with = 0 makes it a pure virtual function
+  virtual T get(int) const = 0;     // virtual with = 0 makes it a pure virtual function
+  virtual void set(int, T) = 0;     // virtual with = 0 makes it a pure virtual function
 };
 
 #endif

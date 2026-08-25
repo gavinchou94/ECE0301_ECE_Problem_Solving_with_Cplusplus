@@ -1,20 +1,21 @@
-# This is new CMakeLists.txt
-# changes from starter code:
-# add a new executable and new test target
+cmake_minimum_required(VERSION 3.14)
+project(struct_classes_steps)
 
-cmake_minimum_required(VERSION 3.10)
-
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(struct_and_class)
-add_executable(test_vector test_vector.cpp catch.hpp)
-# build a target called test_class for test_class_{1/2/3}.cpp: include four files
-add_executable(test_class test_class_1.cpp Employee_1.hpp Employee_1.cpp catch.hpp)
-# build a target called test_class for test_class_{4/4b/5/6/7}.cpp: include six files
-#add_executable(test_class test_class_4.cpp Employee_4.hpp Employee_4.cpp Date_4.hpp Date_4.cpp catch.hpp)
+set(STEPS catch.hpp
+    Employee_1.hpp Employee_1.cpp test_class_1.cpp
+    # Employee_2.hpp Employee_2.cpp test_class_2.cpp
+    # Employee_3.hpp Employee_3.cpp test_class_3.cpp
+    # Employee_4.hpp Employee_4.cpp Date_4.hpp Date_4.cpp test_class_4.cpp
+    # Employee_4.hpp Employee_4.cpp Date_4.hpp Date_4.cpp test_class_4b.cpp
+    # Employee_5.hpp Employee_5.cpp Date_5.hpp Date_5.cpp test_class_5.cpp
+    # Employee_6.hpp Employee_6.cpp Date_6.hpp Date_6.cpp test_class_6.cpp
+    # Employee_7.hpp Employee_7.cpp Date_7.hpp Date_7.cpp test_class_7.cpp
+)
+
+add_executable(test_struct_classes ${STEPS})
 
 enable_testing()
-
-add_test(test-vector test_vector)
-add_test(test-class test_class)
+add_test(NAME test-struct-classes COMMAND test_struct_classes)

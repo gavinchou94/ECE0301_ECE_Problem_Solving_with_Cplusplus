@@ -11,33 +11,33 @@ Date::Date(int y, int m, int d) : year(y), month(m), day(d)
 
 int Date::get_year() const
 {
-    return year;
+  return year;
 }
 
 int Date::get_month() const
 {
-    return month;
+  return month;
 }
 
 int Date::get_day() const
 {
-    return day;
+  return day;
 }
 
 bool Date::set_year(int y)
 {
-    year = y;
-    return true;
+  year = y;
+  return true;
 }
 
 bool Date::set_month(int m)
 {
-    month = m;
-    return true;
+  month = m;
+  return true;
 }
 
 bool Date::set_day(int d)
 {
-    day = d;
-    return true;
+  day = d;
+  return true;
 }

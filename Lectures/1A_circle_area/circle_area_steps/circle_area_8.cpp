@@ -2,10 +2,10 @@
 // Changes compared to circle_area_7.cpp:
 // Add while-loop to repeat the area calculation
 
-#include <iostream>
 #include <cmath>
-#include <iomanip>
 #include <cstdlib>
+#include <iomanip>
+#include <iostream>
 
 int main()
 {

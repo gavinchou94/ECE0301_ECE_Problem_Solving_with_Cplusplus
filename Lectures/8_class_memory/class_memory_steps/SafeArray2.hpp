@@ -9,17 +9,17 @@
 class SafeArray
 {
 private:
-    int *dataptr;
-    int size;
+  int *dataptr;
+  int size;
 
 public:
-    SafeArray();
-    SafeArray(int);
-    ~SafeArray(); // has to include this due to dataptr
+  SafeArray();
+  SafeArray(int);
+  ~SafeArray(); // has to include this due to dataptr
 
-    int get_size() const;
-    int operator[](int) const; // overloading [] for SafeArray object to just access the information
-    int &operator[](int);      // overloading [] for SafeArray object to update the information
+  int get_size() const;
+  int operator[](int) const; // overloading [] for SafeArray object to just access the information
+  int &operator[](int);      // overloading [] for SafeArray object to update the information
 };
 
 #endif

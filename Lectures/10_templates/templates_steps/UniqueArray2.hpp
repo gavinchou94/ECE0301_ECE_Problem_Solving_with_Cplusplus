@@ -12,8 +12,8 @@ template <typename T>                   // declare UniqueArray as a template cla
 class UniqueArray : public SafeArray<T> // inherit from SafeArray<T>
 {
 public:
-    using SafeArray<T>::SafeArray; // inherit constructors of SafeArray<T>
-    void set(int index, T value) override final;
+  using SafeArray<T>::SafeArray; // inherit constructors of SafeArray<T>
+  void set(int index, T value) override final;
 };
 
 #include "UniqueArray2.tpp"

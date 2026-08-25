@@ -5,44 +5,43 @@
 // Try {10, -10 and abcd} after ./circle_area_cli and play with no additional arguments too!
 // Starting here, try CMake "Debug Programs with CLI (command-line inputs)"
 // What would happen if you put "abcd" in your "args" of launch.json file?
-#include <cstdlib>
-#include <iostream>
-#include <iomanip>
 #include <cmath>
+#include <cstdlib>
+#include <iomanip>
+#include <iostream>
 
 int main(int argc, char *argv[]) // This is necessary for any CLI
 {
+  double radius = 4.0; // A default initial value in case of argc = 1, no CLI
 
-    double radius = 4.0; // A default initial value in case of argc = 1, no CLI
+  if (argc > 1) // This guarantees that radius only gets value if there exists one
+  {
+    radius = std::stod(argv[1]); // stod() is a function to convert string to double
+  }
 
-    if (argc > 1) // This guarantees that radius only gets value if there exists one
-    {
-        radius = std::stod(argv[1]); // stod() is a function to convert string to double
-    }
+  // bool isNumber = std::cin.good(); // No more cin, radius is from CLI
+  bool isPositive = (radius > 0);
 
-    // bool isNumber = std::cin.good(); // No more cin, radius is from CLI
-    bool isPositive = (radius > 0);
+  // Due to commenting above, no more isNumber
+  // if (!isNumber) {
+  //     std::cout << "Invalid radius, must be a number" << std::endl;
+  //     return EXIT_FAILURE;
+  // } else
+  if (!isPositive)
+  {
+    std::cout << "Invalid radius, " << radius;
+    std::cout << " should be positive" << std::endl;
+    return EXIT_FAILURE;
+  }
+  else
+  {
+    // calculate and output area as pi*r^2
+    double area = M_PI * pow(radius, 2);
+    std::cout << "Radius is : ";
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << radius << std::endl;
+    std::cout << "Area is : " << area << std::endl;
+  }
 
-    // Due to commenting above, no more isNumber
-    // if (!isNumber) {
-    //     std::cout << "Invalid radius, must be a number" << std::endl;
-    //     return EXIT_FAILURE;
-    // } else
-    if (!isPositive)
-    {
-        std::cout << "Invalid radius, " << radius;
-        std::cout << " should be positive" << std::endl;
-        return EXIT_FAILURE;
-    }
-    else
-    {
-        // calculate and output area as pi*r^2
-        double area = M_PI * pow(radius, 2);
-        std::cout << "Radius is : ";
-        std::cout << std::fixed << std::setprecision(2);
-        std::cout << radius << std::endl;
-        std::cout << "Area is : " << area << std::endl;
-    }
-
-    return EXIT_SUCCESS;
+  return EXIT_SUCCESS;
 }
