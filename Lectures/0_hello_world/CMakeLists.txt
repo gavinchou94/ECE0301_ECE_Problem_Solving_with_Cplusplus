@@ -9,7 +9,7 @@ set(SOURCES hello_world_cmake.cpp)
 add_executable(hello_world_cmake ${SOURCES})
 
 enable_testing()
-add_test(NAME test-hello-world-cmake COMMAND test_hello_world_cmake)
+add_test(NAME test-hello-world-cmake COMMAND hello_world_cmake)
 
 add_custom_target(direct_download
     COMMAND ${CMAKE_COMMAND} -E tar "cfv"
