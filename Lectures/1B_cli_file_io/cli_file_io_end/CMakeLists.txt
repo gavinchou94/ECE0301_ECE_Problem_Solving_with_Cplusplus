@@ -7,10 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCES cli_file_io.cpp)
 set(HEADERS )
 
-add_executable(test_cli_file_io ${SOURCES})
-
-enable_testing()
-add_test(NAME test-cli-file-io COMMAND test_cli_file_io)
+add_executable(cli_file_io ${SOURCES})
 
 add_custom_target(direct_download
     COMMAND ${CMAKE_COMMAND} -E tar "cfv"

@@ -21,6 +21,6 @@ set(STEPS
     # cli_file_io_14.cpp
 )
 
-add_executable(test_cli_file_io ${STEPS})
+add_executable(cli_file_io_steps ${STEPS})
 
 enable_testing()
