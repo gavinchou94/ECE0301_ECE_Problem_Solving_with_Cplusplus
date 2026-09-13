@@ -1,3 +1,9 @@
+// This is shape_func_1.cpp
+// Changes compared to shape_func_starter.cpp:
+// - Removes the r = <radius> parsing and validation from the starter code.
+// - Finds the first comma to distinguish the one-number circle case.
+// Run via CMake Debug to practice file read/write debugging.
+
 #include <cmath>
 #include <cstdlib>
 #include <fstream>
@@ -7,20 +13,19 @@
 
 int main(int argc, char *argv[])
 {
-  // Use default filenames when no user-supplied filename arguments are provided.
   std::string input_file = "../input.txt";
   std::string output_file = "../output.txt";
 
-  if (argc > 3) // Reject more than two user-supplied filename arguments.
+  if (argc > 3)
   {
     std::cout << "Usage: " << argv[0] << " <input_file> <output_file>" << std::endl;
     return EXIT_FAILURE;
   }
-  else if (argc == 2) // Override the input filename and retain the default output filename.
+  else if (argc == 2)
   {
     input_file = argv[1];
   }
-  else if (argc == 3) // Override both filenames.
+  else if (argc == 3)
   {
     input_file = argv[1];
     output_file = argv[2];
@@ -46,21 +51,27 @@ int main(int argc, char *argv[])
 
   std::string line;
 
-  // Read each line until the stream reaches the end of the file or fails.
+  int dimension = 0;
+  int first_comma_index;
+
   while (getline(file_read, line))
   {
-    int equals_index = line.find("=");
+    // Find first comma, then second comma.
 
-    if (equals_index == std::string::npos)
+    // One-number case.
+    first_comma_index = line.find(",");
+
+    if (first_comma_index == std::string::npos)
     {
-      std::cout << "Input formatting error" << std::endl;
-      std::cout << "Line should be r = <radius>" << std::endl;
-      file_read.close();
-      file_write.close();
-      return EXIT_FAILURE;
+      std::cout << "It's a circle" << std::endl;
+      dimension = 1;
     }
 
-    std::string input = line.substr(equals_index + 2, line.length());
+    // Two-number case.
+
+    // Three-number case.
+
+    std::string input = "4.0"; // placeholder value
 
     double radius;
 
@@ -90,10 +101,9 @@ int main(int argc, char *argv[])
     // Calculate and output the area as pi * radius^2.
     double area = M_PI * pow(radius, 2);
 
-    // Write the results to the output file.
     file_write << "Radius is : ";
     file_write << std::fixed << std::setprecision(2);
-    file_write << radius << ", "; // Separate the radius and area with a comma.
+    file_write << radius << ", ";
     file_write << "Area is : " << area << std::endl;
   }
 

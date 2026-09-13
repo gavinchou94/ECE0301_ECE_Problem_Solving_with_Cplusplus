@@ -1,0 +1,3 @@
+Area is : 50.27
+Area is : 22.20
+Area is : 6.18

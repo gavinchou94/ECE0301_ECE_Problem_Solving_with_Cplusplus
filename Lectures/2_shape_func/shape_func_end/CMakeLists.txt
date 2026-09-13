@@ -1,17 +1,17 @@
 cmake_minimum_required(VERSION 3.14)
-project(shape_func_starter)
+project(shape_func_end)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(SOURCES shape_func_starter.cpp)
+set(SOURCES shape_func.cpp)
 set(HEADERS )
 
-add_executable(shape_func_starter ${SOURCES})
+add_executable(shape_func ${SOURCES})
 
 add_custom_target(direct_download
     COMMAND ${CMAKE_COMMAND} -E tar "cfv"
-        "${CMAKE_CURRENT_BINARY_DIR}/../shape_func_starter.zip"
+        "${CMAKE_CURRENT_BINARY_DIR}/../shape_func_end.zip"
         --format=zip
-        ${SOURCES} CMakeLists.txt input.txt
+        ${SOURCES} CMakeLists.txt input.txt output.txt
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
