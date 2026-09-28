@@ -1,5 +1,5 @@
-#ifndef _POINTERS_HPP
-#define _POINTERS_HPP
+#ifndef POINTERS_HPP
+#define POINTERS_HPP
 
 /**
  * Copies the contents of the given integer array into a new array.
