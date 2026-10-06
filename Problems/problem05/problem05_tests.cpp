@@ -108,10 +108,10 @@ TEST_CASE("Test col replace dim 2", "[solver]")
 {
   const int dim = 2;
   double matrix[dim][CAP] = {{0.4, 1.2}, {1.7, -3.2}};
-  double vector[dim] = {1, -2};
+  double vector[dim] = {-2, 8.1};
   double result[dim][CAP];
   int col = 0;
-  double test[dim][CAP] = {{1, 1.2}, {-2, -3.2}};
+  double test[dim][CAP] = {{-2, 1.2}, {8.1, -3.2}};
   replace_column(matrix, col, vector, result, dim);
 
   for (int i = 0; i < dim; i++)
