@@ -23,6 +23,7 @@
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
     "${workspaceFolder}/Lectures/7_struct_class/struct_class_starter",
+    "${workspaceFolder}/Problems/problem06",
     "${workspaceFolder}/Lectures/6_vector/vector_starter",
     "${workspaceFolder}/Problems/exam1",
     "${workspaceFolder}/Lectures/5_pointers/pointers_end",
