@@ -4,8 +4,8 @@ project(struct_class_starter)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(SOURCES test_struct_class_starter.cpp Employee.cpp)
-set(HEADERS Employee.hpp)
+set(SOURCES test_class_starter.cpp)
+set(HEADERS)
 
 add_executable(test_struct_class ${SOURCES} ${HEADERS} catch.hpp)
 
