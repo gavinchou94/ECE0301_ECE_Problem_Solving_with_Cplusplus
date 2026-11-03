@@ -7,19 +7,25 @@ Image::Image() : width(0), height(0), image_data(nullptr)
 {
 }
 
-Image::Image(int size)
+Image::Image(int size) : width(0), height(0), image_data(nullptr)
 {
   // TODO
+  // Placeholder: the initializer list above only creates an empty image so
+  // the starter code runs safely. Replace it with your own initialization.
 }
 
-Image::Image(int w, int h)
+Image::Image(int w, int h) : width(0), height(0), image_data(nullptr)
 {
   // TODO
+  // Placeholder: the initializer list above only creates an empty image so
+  // the starter code runs safely. Replace it with your own initialization.
 }
 
-Image::Image(const Image &im)
+Image::Image(const Image &im) : width(0), height(0), image_data(nullptr)
 {
   // TODO: make sure to apply deep copy
+  // Placeholder: the initializer list above only creates an empty image so
+  // the starter code runs safely. Replace it with your own initialization.
 }
 
 Image::~Image()
@@ -30,6 +36,7 @@ Image::~Image()
 Image &Image::operator=(Image im)
 {
   // TODO: make sure to apply copy-swap-idiom
+  return *this;
 }
 
 int Image::get_width() const
@@ -71,9 +78,11 @@ bool Image::save_to_file(std::string filename)
 Image operator+(const Image &im, const RGBPIXEL &val)
 {
   // TODO
+  return Image();
 }
 
 Image operator+(const RGBPIXEL &val, const Image &im)
 {
   // TODO
+  return Image();
 }
