@@ -23,6 +23,8 @@
   "workbench.statusBar.visible": false,
   "cmake.sourceDirectory": [
     "${workspaceFolder}/Problems/exam2",
+    "${workspaceFolder}/Lectures/9_inh_overriding/inh_overriding_end",
+    "${workspaceFolder}/Lectures/9_inh_overriding/inh_overriding_steps",
     "${workspaceFolder}/Lectures/9_inh_overriding/inh_overriding_starter",
     "${workspaceFolder}/Problems/problem09",
     "${workspaceFolder}/Problems/problem08",

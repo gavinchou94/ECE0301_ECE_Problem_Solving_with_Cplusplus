@@ -3,7 +3,7 @@
 
 #include "SafeArray.hpp"
 
-SafeArray::SafeArray() : size(0), dataptr(nullptr)
+SafeArray::SafeArray() : dataptr(nullptr), size(0)
 {
   // size = 0;
   // dataptr = nullptr;
